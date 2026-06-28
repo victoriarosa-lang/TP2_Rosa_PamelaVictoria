@@ -1,0 +1,58 @@
+    1  sudo fdisk/dev/sdd
+    2  sudo fdisk /dev/sdd
+    3  sudo wipefs -a /dev/sdd
+    4  vagrant halt
+    5  sudo poweroff
+    6  sudo fdisk /dev/sdd
+    7  lsblk
+    8  sudo fdisk /dev/sdd
+    9  sudo fdidsk -l /dev/sdd
+   10  sudo fdisk -l /dev/sdd
+   11  free
+   12  free -h
+   13  sudo mkswap /dev/sdd1
+   14  free -h
+   15  sudo swapon /dev/sdd1
+   16  free -h
+   17  swapon -s
+   18  cat /proc/swaps
+   19  sudo fdisk /dev/sdc
+   20  sudo wipefs -a /dev/sdc1
+   21  sudo pvcreate /dev/sdd2 /dev/sdd3 /dev/sdd3 /dev/sdd5 /dev/sdd6 /dev/sdc1 /dev/sdc2
+   22  sudo pvs
+   23  sudo vgcreate vg_datos /dev/sdc1 /dev/sdc2
+   24  sudo vgs
+   25  pvs
+   26  vgs
+   27  sudo vgcreate vg_web /dev/sdc2
+   28  sudo vgcreate vg_web /dev/sdd2
+   29  sudo pvs
+   30  sudo lvcreate -L 1G vg_web -n lv_web1
+   31  sudo vgextend vg_web /dev/sdd3 /dev/sdd5 /dev/sdd6
+   32  sudo vgs
+   33  sudo lvcreate -L 1G vg_web -n lv_web1
+   34  lvs
+   35  sudo lvs
+   36  sudo fdisk -l
+   37  mkfs.ext4
+   38  sudo mkfs.ext4 /dev/mapper/vg_web-lv_web1
+   39  sudo vgs
+   40  sudo lvcreate -L 500M -n lv_web2 vg_web
+   41  sudo lvcreate -L 500M -n lv_web3 vg_web
+   42  sudo lvcreate -l 100%FREE -n lv_web3 vg_web
+   43  sudo mkfs.ext4 /dev/mapper/vg_web-lv_web2
+   44  sudo mkfs.ext4 /dev/mapper/vg_web-lv_web3
+   45  sudo mkdir /mnt/web2 /mnt/web3
+   46  sudo mount /dev/mapper/vg_web-lv_web2 /mnt/web2
+   47  sudo mount /dev/mapper/vg_web-lv_web3 /mnt/web3
+   48  df -h
+   49  sudo lvs
+   50  sudo mkdir /mnt/web1
+   51  sudo mount /dev/mapper/vg_web-lv_web1 /mnt/web1
+   52  df -h
+   53  git clone https://github.com/victoriarosa-lang/TP2_Rosa_PamelaVictoria.git
+   54  cd TP2_Rosa_PamelaVictoria
+   55  sudo pvs > pvs.txt
+   56  sudo vgs > vgs.txt
+   57  sudo lvs > lvs.txt
+   58  history > historial_lvm.txt
